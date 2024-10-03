@@ -25,16 +25,17 @@ for i in data:
     x.add(i.split(",")[1])
 x = sorted(x)
 
-print("Number of unique zones in csv file:", len(data))
+print("Number of unique zones in csv file:", len(x))
+
 
 print('Sorted Order Unique Borough:', x)
 
 cnt = 0
 for i in data:
-    if i.split(',')[1]=='Brooklyn':
+    if i.split(',')[1].strip()=='"Brooklyn"':
         cnt+=1
 
-print('Number of Brooklyn:', cnt)
+print('Number of Brooklyn Borough:', cnt)
 
 
 with open('output.txt', 'w') as file:
